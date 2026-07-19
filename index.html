@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sakshi | Aspiring VLSI Design & Verification Engineer</title>
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+            --accent: #38bdf8;
+            --accent-hover: #7dd3fc;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            padding: 3rem 1rem;
+        }
+
+        .container {
+            max-width: 850px;
+            margin: 0 auto;
+        }
+
+        /* Hero Section */
+        header {
+            margin-bottom: 3rem;
+            border-bottom: 1px solid #334155;
+            padding-bottom: 2.5rem;
+        }
+
+        h1 {
+            font-size: 2.8rem;
+            color: var(--text-main);
+            margin-bottom: 0.5rem;
+            letter-spacing: -0.05em;
+        }
+
+        .subtitle {
+            font-size: 1.3rem;
+            color: var(--accent);
+            margin-bottom: 1rem;
+            font-weight: 500;
+        }
+
+        .bio {
+            color: var(--text-muted);
+            font-size: 1.05rem;
+            margin-bottom: 1.5rem;
+            max-width: 700px;
+        }
+
+        /* Global Buttons & Links */
+        .links-container {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--card-bg);
+            color: var(--text-main);
+            text-decoration: none;
+            padding: 0.5rem 1.2rem;
+            border-radius: 6px;
+            border: 1px solid #334155;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: all 0.2s ease;
+        }
+
+        .btn:hover {
+            border-color: var(--accent);
+            color: var(--accent);
+        }
+
+        .btn.primary {
+            background-color: var(--accent);
+            color: var(--bg-color);
+            border: none;
+            font-weight: 600;
+        }
+
+        .btn.primary:hover {
+            background-color: var(--accent-hover);
+            color: var(--bg-color);
+        }
+
+        /* Section Styling */
+        section {
+            margin-bottom: 3.5rem;
+        }
+
+        h2 {
+            font-size: 1.6rem;
+            color: var(--text-main);
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        h2::after {
+            content: "";
+            flex-grow: 1;
+            height: 1px;
+            background-color: #334155;
+        }
+
+        /* Experience & Extra Section Layout */
+        .timeline-item {
+            margin-bottom: 2rem;
+            padding-left: 1rem;
+            border-left: 2px solid #334155;
+        }
+
+        .timeline-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            margin-bottom: 0.5rem;
+        }
+
+        .role-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--text-main);
+        }
+
+        .company-location {
+            color: var(--accent);
+            font-size: 0.95rem;
+        }
+
+        .date-badge {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            background-color: #1e293b;
+            padding: 0.2rem 0.6rem;
+            border-radius: 4px;
+            border: 1px solid #334155;
+        }
+
+        .timeline-bullets {
+            list-style-type: disc;
+            margin-left: 1.2rem;
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        .timeline-bullets li {
+            margin-bottom: 0.4rem;
+        }
+
+        /* Projects */
+        .project-card {
+            background-color: var(--card-bg);
+            border: 1px solid #334155;
+            border-radius: 8px;
+            padding: 1.8rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .project-title {
+            font-size: 1.3rem;
+            color: var(--text-main);
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .tags {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+            margin-bottom: 1.2rem;
+        }
+
+        .tag {
+            background-color: #0f172a;
+            color: var(--accent);
+            font-size: 0.8rem;
+            padding: 0.2rem 0.6rem;
+            border-radius: 4px;
+            border: 1px solid #334155;
+        }
+
+        /* Skills Grid */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 1.2rem;
+        }
+
+        .skill-category {
+            background-color: var(--card-bg);
+            border: 1px solid #334155;
+            border-radius: 8px;
+            padding: 1.3rem;
+        }
+
+        .category-title {
+            color: var(--accent);
+            font-size: 1.05rem;
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+            border-bottom: 1px solid #334155;
+            padding-bottom: 0.25rem;
+        }
+
+        .skill-list {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            list-style-type: none;
+        }
+
+        .skill-list li {
+            margin-bottom: 0.35rem;
+            display: flex;
+            align-items: center;
+        }
+
+        .skill-list li::before {
+            content: "▹";
+            color: var(--accent);
+            margin-right: 0.5rem;
+        }
+
+        /* Education Layout */
+        .edu-item {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .edu-details h3 {
+            font-size: 1.15rem;
+            color: var(--text-main);
+        }
+
+        .edu-details p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        .edu-gpa {
+            color: var(--accent);
+            font-weight: 500;
+            font-size: 0.95rem;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        
+        <!-- HERO SECTION -->
+        <header>
+            <h1>Sakshi</h1>
+            <div class="subtitle">Aspiring VLSI Design & Verification Engineer</div>
+            <p class="bio">
+                B.Tech ECE graduate specializing in Front-End RTL Design, Hardware Description Languages, and Constrained-Random Verification. Experienced in micro-architecture design, protocol verification, and utilizing industry-standard EDA tools to validate complex digital subsystems.
+            </p>
+            <div class="links-container">
+                <a href="mailto:sakshikishore01@gmail.com" class="btn primary">Email Me</a>
+                <a href="https://github.com/sakshikishore01" target="_blank" class="btn">GitHub</a>
+                <a href="https://www.linkedin.com/in/sakshi-840b63219" target="_blank" class="btn">LinkedIn</a>
+            </div>
+        </header>
+
+        <!-- EXPERIENCE SECTION -->
+        <section id="experience">
+            <h2>Experience</h2>
+            
+            <div class="timeline-item">
+                <div class="timeline-header">
+                    <div>
+                        <span class="role-title">VLSI Intern</span> <br>
+                        <span class="company-location">NIELIT COE, MeitY, Govt of India (Noida)</span>
+                    </div>
+                    <span class="date-badge">Dec 2025 - June 2026</span>
+                </div>
+                <ul class="timeline-bullets">
+                    <li>Assisted in refining and reviewing technical documentation for an open-source chip design learning platform to improve the clarity of digital design and RTL verification flows.</li>
+                    <li>Utilized the center's ecosystem for self-directed technical training in RTL simulation, debugging, and SoC design workflows using commercial EDA tools.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- PROJECTS SECTION -->
+        <section id="projects">
+            <h2>Featured Projects</h2>
+
+            <!-- Project 1 -->
+            <div class="project-card">
+                <div class="project-title">Router-1x3-design-and-verification</div>
+                <div class="tags">
+                    <span class="tag">SystemVerilog</span>
+                    <span class="tag">Cadence Xcelium</span>
+                    <span class="tag">Incisive (NC-Sim)</span>
+                    <span class="tag">Makefile Automation</span>
+                    <span class="tag">Functional Coverage</span>
+                </div>
+                <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 0.5rem;">
+                    This project contains a production-grade, object-oriented verification environment built in SystemVerilog to validate a high-performance 1-by-3 network packet router. The infrastructure utilizes a layered testbench architecture to isolate stimulus generation, driver injection, passive monitoring, and scoreboarding checks.
+                </p>
+                <p style="color: var(--text-muted); font-size: 0.95rem;">
+                    To meet modern semiconductor quality sign-off metrics, the verification suite integrates a native functional coverage monitor module tracking multidimensional cross-coverage matrices. The compilation, elaboration, and simulation workflows are fully automated via an optimized Makefile targeting Cadence Incisive (NC-Sim) and Xcelium simulation engines, achieving 94.65% functional coverage.
+                </p>
+            </div>
+
+            <!-- Project 2 -->
+            <div class="project-card">
+                <div class="project-title">AMBA-AHB-Lite-1-Master-2-Slave-Subsystem-Verification-Platform</div>
+                <div class="tags">
+                    <span class="tag">SystemVerilog</span>
+                    <span class="tag">Constrained Randomization</span>
+                    <span class="tag">Scoreboard Reference Model</span>
+                    <span class="tag">AMBA AHB</span>
+                </div>
+                <p style="color: var(--text-muted); font-size: 0.95rem;">
+                    Built a SystemVerilog testbench using class-based constrained-randomization to validate address decoding, burst transfers, and HREADY wait-states. Developed an automated scoreboard to execute real-time data integrity checks against a reference model, ensuring 91.66% functional coverage.
+                </p>
+            </div>
+
+            <!-- Project 3 -->
+            <div class="project-card">
+                <div class="project-title">Physical-Design-Synthesis-of-Synchronous-FIFO</div>
+                <div class="tags">
+                    <span class="tag">Verilog HDL</span>
+                    <span class="tag">Cadence Genus</span>
+                    <span class="tag">Cadence Innovus</span>
+                    <span class="tag">SDC Constraints</span>
+                    <span class="tag">OCV / CPPR</span>
+                </div>
+                <p style="color: var(--text-muted); font-size: 0.95rem;">
+                    Designed and verified a 500 MHz Synchronous FIFO using Verilog HDL, Cadence Xcelium, and SimVision for waveform-based debugging of pointer and flag logic. Performed RTL synthesis using Cadence Genus with custom SDC timing constraints, resolving scan-cell mapping issues during synthesis. Executed the complete physical design flow in Cadence Innovus, including floorplanning, power planning, placement, clock-tree synthesis, routing, and timing closure using OCV and CPPR analysis.
+                </p>
+            </div>
+
+            <!-- Project 4 -->
+            <div class="project-card">
+                <div class="project-title">AMBA-APB-Subsystem-Verification-Environment</div>
+                <div class="tags">
+                    <span class="tag">SystemVerilog</span>
+                    <span class="tag">SVA Checks</span>
+                    <span class="tag">Interface Compliance</span>
+                    <span class="tag">AMBA APB</span>
+                </div>
+                <p style="color: var(--text-muted); font-size: 0.95rem;">
+                    Verified an APB subsystem using targeted SystemVerilog Assertions (SVA) to catch interface violations, successfully tracking bus protocol operations and achieving 100% functional coverage.
+                </p>
+            </div>
+
+            <!-- Project 5 -->
+            <div class="project-card">
+                <div class="project-title">Asynchronous FIFO Verification</div>
+                <div class="tags">
+                    <span class="tag">SystemVerilog</span>
+                    <span class="tag">SVA</span>
+                    <span class="tag">Clock Domain Crossing (CDC)</span>
+                    <span class="tag">Pointer Sync</span>
+                </div>
+                <p style="color: var(--text-muted); font-size: 0.95rem;">
+                    Developed SVA checkers to strictly validate pointer boundaries, full/empty status flags, and prevent overflow conditions to securely handle multi-clock domain transfers across distinct clock boundaries.
+                </p>
+            </div>
+        </section>
+
+        <!-- SKILLS SECTION -->
+        <section id="skills">
+            <h2>Technical Toolbox</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <div class="category-title">Verification & Languages</div>
+                    <ul class="skill-list">
+                        <li>SystemVerilog & Verilog</li>
+                        <li>Constrained-Random Verification</li>
+                        <li>OOP Testbench Design & Planning</li>
+                        <li>SVA (Temporal Assertions)</li>
+                        <li>UVM Fundamentals</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <div class="category-title">EDA Tools & Suites</div>
+                    <ul class="skill-list">
+                        <li>Cadence Xcelium & SimVision</li>
+                        <li>Cadence Genus Synthesis</li>
+                        <li>Xilinx Vivado</li>
+                        <li>Verilator & Icarus Verilog</li>
+                        <li>Yosys (Synthesis) and OpenSTA (STA)</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <div class="category-title">Core Architecture & Flow</div>
+                    <ul class="skill-list">
+                        <li>Digital Electronics & FSM/FIFO & CMOS</li>
+                        <li>AMBA (AHB-Lite, AXI4 lite, APB)</li>
+                        <li>CDC, SoC Signoff & Linting</li>
+                        <li>NoC Architecture, UART, SPI</li>
+                        <li>Linux (RHEL) & TCL Scripting</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- EDUCATION SECTION -->
+        <section id="education">
+            <h2>Education</h2>
+            
+            <div class="edu-item">
+                <div class="edu-details">
+                    <h3>Guru Gobind Singh Indraprastha University</h3>
+                    <p>Bachelor of Technology in Electronics and Communication Engineering</p>
+                    <p style="font-size: 0.85rem; color: var(--text-muted);">Delhi, India</p>
+                </div>
+                <div style="text-align: right;">
+                    <span class="date-badge">Aug 2019 - Aug 2023</span> <br>
+                    <span class="edu-gpa">CGPA: 8.67</span>
+                </div>
+            </div>
+
+            <div class="edu-item">
+                <div class="edu-details">
+                    <h3>Rajkiya Pratibha Vikas Vidyalaya</h3>
+                    <p>High School & Secondary Education</p>
+                    <p style="font-size: 0.85rem; color: var(--text-muted); margin-top: 0.25rem;">
+                        Class 12th: <span style="color: var(--accent);">8.6 CGPA</span> &nbsp;|&nbsp; Class 10th: <span style="color: var(--accent);">10.0 CGPA</span>
+                    </p>
+                </div>
+                <div style="text-align: right;">
+                    <span class="date-badge">2017 - 2019</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- ADDITIONAL INFORMATION & LEADERSHIP -->
+        <section id="additional-info">
+            <h2>Additional Information & Leadership</h2>
+            
+            <div class="timeline-item">
+                <div class="timeline-header">
+                    <div>
+                        <span class="role-title">Full-Time Civil Services Preparation</span> <br>
+                        <span class="company-location">Analytical Skill Development</span>
+                    </div>
+                    <span class="date-badge">2023 - 2025</span>
+                </div>
+                <p style="color: var(--text-muted); font-size: 0.95rem; margin-left: 0.25rem;">
+                    Developed advanced analytical thinking, strict time management, deep research proficiency, resilience, and highly structured engineering discipline under rigorous study schedules.
+                </p>
+            </div>
+
+            <div class="timeline-item" style="margin-bottom: 1.5rem;">
+                <div class="timeline-header">
+                    <div>
+                        <span class="role-title">Treasurer</span> <br>
+                        <span class="company-location">IEEE GBPEC Student Branch</span>
+                    </div>
+                    <span class="date-badge">2022 - 2023</span>
+                </div>
+                <p style="color: var(--text-muted); font-size: 0.95rem; margin-left: 0.25rem;">
+                    Managed budgeting and financial coordination for student initiatives and regional technical events.
+                </p>
+            </div>
+            
+            <div class="skill-category" style="background-color: transparent; border: none; padding: 0 0 0 0.25rem;">
+                <div class="category-title" style="font-size: 1.1rem; border-bottom: none; margin-bottom: 0.5rem;">Certifications</div>
+                <ul class="skill-list" style="color: var(--text-muted); font-size: 0.95rem;">
+                    <li><strong>VLSI Design Flow (RTL to GDS-II)</strong> – NIELIT</li>
+                    <li><strong>Bootcamp: RTL, IP Integration, and SoC Signoff</strong> – NIELIT</li>
+                    <li><strong>Verilog HDL: Hardware Design Masterclass</strong> – Udemy</li>
+                    <li><strong>Verification Series: SystemVerilog Essentials</strong> – Udemy</li>
+                    <li><strong>Embedded Systems Certification</strong> – MSME (PPDC)</li>
+                </ul>
+            </div>
+        </section>
+
+    </div>
+
+</body>
+</html>
